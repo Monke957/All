@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm> // for std::remove
 #include <fstream>
 #include <string>
 #include <minizip/unzip.h>
@@ -18,14 +19,14 @@ int main() {
     std::cout << "File path = ";
     std::getline(std::cin, zipPath);
     // Remove quotes if any
-    zipPath.erase(remove(zipPath.begin(), zipPath.end(), '\"'), zipPath.end());
-    zipPath.erase(remove(zipPath.begin(), zipPath.end(), '\''), zipPath.end());
+    zipPath.erase(std::remove(zipPath.begin(), zipPath.end(), '\"'), zipPath.end());
+    zipPath.erase(std::remove(zipPath.begin(), zipPath.end(), '\''), zipPath.end());
 
     // Input password list
     std::cout << "Password list = ";
     std::getline(std::cin, passList);
-    passList.erase(remove(passList.begin(), passList.end(), '\"'), passList.end());
-    passList.erase(remove(passList.begin(), passList.end(), '\''), passList.end());
+    passList.erase(std::remove(passList.begin(), passList.end(), '\"'), passList.end());
+    passList.erase(std::remove(passList.begin(), passList.end(), '\''), passList.end());
 
     // Open ZIP file
     unzFile zipFile = unzOpen(zipPath.c_str());
