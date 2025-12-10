@@ -1,0 +1,2 @@
+all:
+	g++ gg.cpp -o Program.exe -lopengl32 -lglfw -lglew32 -lgdi32

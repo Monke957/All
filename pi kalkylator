@@ -1,0 +1,20 @@
+import os
+
+os.system('cls' if os.name == 'nt' else 'clear')
+
+myfile = open("1-100000000.txt", "rt")
+contents = myfile.read()
+
+
+pi_str = contents
+
+print("Hur många decimaler behöver du veta? = ", end="")
+a = input("")
+a = int(a)
+
+if a > len(pi_str) - 2:  
+    print(f"Max antal decimaler är {len(pi_str) - 2}.")
+    a = len(pi_str) - 2
+
+result = pi_str[:2+a]
+print("Decimaler av pi =", result)
